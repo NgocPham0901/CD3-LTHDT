@@ -1,12 +1,3 @@
-// Nhap, xuat
-    void nhap();
-    void xuat() const;
-
-    // Tinh luong
-    void tinhLuong();
-};
-
-
 // Nhap nhan vien
 void NhanVien::nhap()
 {
