@@ -1,0 +1,34 @@
+// Tinh luong thuc linh
+void NhanVien::tinhLuong()
+{
+    LuongThucLinh =
+        HeSoLuong * 2340000 * SoNgayCong / 26;
+}
+void QuanLyNhanVien::SapXep()
+{
+    // Tinh luong cho tat ca nhan vien
+    for (int i = 0; i < SoLuong; i++)
+    {
+        ds[i].tinhLuong();
+    }
+
+    // Bubble Sort
+    for (int i = 0; i < SoLuong - 1; i++)
+    {
+        for (int j = 0; j < SoLuong - i - 1; j++)
+        {
+            if (ds[j].getLuongThucLinh() <
+                ds[j + 1].getLuongThucLinh())
+            {
+                NhanVien temp = ds[j];
+
+                ds[j] = ds[j + 1];
+
+                ds[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "\nDa sap xep danh sach theo "
+         << "luong thuc linh giam dan\n";
+}
