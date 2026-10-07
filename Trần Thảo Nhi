@@ -1,0 +1,37 @@
+void QuanLyNhanVien::TimKiem()
+{
+    string MaCanTim;
+
+    cout << "Nhap ma nhan vien can tim: ";
+    getline(cin, MaCanTim);
+
+    bool TimThay = false;
+
+    for (int i = 0; i < SoLuong; i++)
+    {
+        if (ds[i].getMaNV() == MaCanTim)
+        {
+            cout << "\nTim thay nhan vien:\n";
+
+            cout << left
+                 << setw(10) << "MaNV"
+                 << setw(25) << "Ho Ten"
+                 << setw(20) << "Phong Ban"
+                 << setw(15) << "He So"
+                 << setw(15) << "Ngay Cong"
+                 << setw(18) << "Luong"
+                 << endl;
+
+            ds[i].xuat();
+
+            TimThay = true;
+            break;
+        }
+    }
+
+    if (!TimThay)
+    {
+        cout << "Khong tim thay nhan vien "
+             << "voi ma vua nhap\n";
+    }
+}
