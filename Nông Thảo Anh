@@ -1,0 +1,97 @@
+void QuanLyNhanVien::Xoa()
+{
+    if (SoLuong == 0)
+    {
+        cout << "Danh sach nhan vien rong, "
+             << "khong the xoa\n";
+        return;
+    }
+
+    int k;
+
+    do
+    {
+        cout << "Nhap vi tri can xoa "
+             << "(0 <= k < " << SoLuong << "): ";
+        cin >> k;
+
+        if (k < 0 || k >= SoLuong)
+        {
+            cout << "Vi tri khong hop le, "
+                 << "nhap lai\n";
+        }
+
+    } while (k < 0 || k >= SoLuong);
+
+    // Dich cac phan tu sang trai
+    for (int i = k; i < SoLuong - 1; i++)
+    {
+        ds[i] = ds[i + 1];
+    }
+
+    SoLuong--;
+
+    cout << "Xoa nhan vien thanh cong\n";
+}
+
+int main()
+{
+    QuanLyNhanVien ql;
+
+    int LuaChon;
+
+    do
+    {
+        cout << "\n\n========== QUAN LY NHAN VIEN ==========\n";
+
+        cout << "1. Nhap danh sach nhan vien\n";
+        cout << "2. In danh sach nhan vien\n";
+        cout << "3. Sap xep theo luong giam dan\n";
+        cout << "4. Tim kiem nhan vien theo ma\n";
+        cout << "5. Them nhan vien tai vi tri k\n";
+        cout << "6. Xoa nhan vien tai vi tri k\n";
+        cout << "0. Thoat chuong trinh\n";
+
+        cout << "\nNhap lua chon: ";
+        cin >> LuaChon;
+        cin.ignore();
+
+        switch (LuaChon)
+        {
+        case 1:
+            ql.NhapDanhSach();
+            break;
+
+        case 2:
+            ql.InDanhSach();
+            break;
+
+        case 3:
+            ql.SapXep();
+            ql.InDanhSach();
+            break;
+
+        case 4:
+            ql.TimKiem();
+            break;
+
+        case 5:
+            ql.Them();
+            break;
+
+        case 6:
+            ql.Xoa();
+            break;
+
+        case 0:
+            cout << "Ket thuc chuong trinh\n";
+            break;
+
+        default:
+            cout << "Lua chon khong hop le\n";
+        }
+
+    } while (LuaChon != 0);
+
+    return 0;
+}
