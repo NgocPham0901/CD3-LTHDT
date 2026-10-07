@@ -1,0 +1,43 @@
+// Nhap, xuat
+    void nhap();
+    void xuat() const;
+
+    // Tinh luong
+    void tinhLuong();
+};
+
+
+// Nhap nhan vien
+void NhanVien::nhap()
+{
+    cout << "Nhap ma nhan vien: ";
+    getline(cin, MaNV);
+
+    cout << "Nhap ho ten: ";
+    getline(cin, HoTen);
+
+    cout << "Nhap phong ban: ";
+    getline(cin, PhongBan);
+
+    cout << "Nhap he so luong: ";
+    cin >> HeSoLuong;
+
+    cout << "Nhap so ngay cong: ";
+    cin >> SoNgayCong;
+
+    cin.ignore();
+}
+// Xuat nhan vien
+void NhanVien::xuat() const
+{
+    cout << left
+         << setw(10) << MaNV
+         << setw(25) << HoTen
+         << setw(20) << PhongBan
+         << setw(15) << HeSoLuong
+         << setw(15) << SoNgayCong
+         << right << setw(18)
+         << fixed << setprecision(0)
+         << LuongThucLinh
+         << endl;
+}
