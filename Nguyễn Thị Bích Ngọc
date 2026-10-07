@@ -41,3 +41,90 @@ void NhanVien::xuat() const
          << LuongThucLinh
          << endl;
 }
+// ======================================================
+// ISSUE 3
+// XAY DUNG LOP QUAN LY NHAN VIEN
+// ======================================================
+
+class QuanLyNhanVien
+{
+private:
+    NhanVien ds[200];
+    int SoLuong;
+
+public:
+    QuanLyNhanVien()
+    {
+        SoLuong = 0;
+    }
+
+    void NhapDanhSach();
+    void InDanhSach() const;
+    void SapXep();
+    void TimKiem();
+    void Them();
+    void Xoa();
+};
+
+
+// ======================================================
+// NHAP DANH SACH NHAN VIEN
+// ======================================================
+
+void QuanLyNhanVien::NhapDanhSach()
+{
+    do
+    {
+        cout << "Nhap so luong nhan vien (0 < n < 200): ";
+        cin >> SoLuong;
+
+        if (SoLuong <= 0 || SoLuong >= 200)
+        {
+            cout << "So luong nhan vien khong hop le, "
+                 << "vui long nhap lai.\n";
+        }
+
+    } while (SoLuong <= 0 || SoLuong >= 200);
+
+    cin.ignore();
+
+    for (int i = 0; i < SoLuong; i++)
+    {
+        cout << "\nNhap nhan vien thu " << i + 1 << "\n";
+        ds[i].nhap();
+    }
+}
+
+
+// ======================================================
+// IN DANH SACH NHAN VIEN
+// ======================================================
+
+void QuanLyNhanVien::InDanhSach() const
+{
+    if (SoLuong == 0)
+    {
+        cout << "Danh sach nhan vien rong\n";
+        return;
+    }
+
+    cout << "\nDANH SACH NHAN VIEN\n";
+
+    cout << left
+         << setw(5) << "STT"
+         << setw(10) << "MaNV"
+         << setw(25) << "Ho Ten"
+         << setw(20) << "Phong Ban"
+         << setw(15) << "He So"
+         << setw(15) << "Ngay Cong"
+         << setw(18) << "Luong"
+         << endl;
+
+    cout << string(108, '-') << endl;
+
+    for (int i = 0; i < SoLuong; i++)
+    {
+        cout << left << setw(5) << i + 1;
+        ds[i].xuat();
+    }
+}
