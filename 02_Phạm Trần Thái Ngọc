@@ -103,3 +103,10 @@ public:
     {
         LuongThucLinh = luong;
     }
+// Nhap, xuat
+    void nhap();
+    void xuat() const;
+
+    // Tinh luong
+    void tinhLuong();
+};
