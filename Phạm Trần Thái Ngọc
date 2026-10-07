@@ -1,0 +1,106 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+// ======================================================
+// ISSUE 2
+// XAY DUNG LOP NHAN VIEN
+// ======================================================
+
+class NhanVien
+{
+private:
+    string MaNV;
+    string HoTen;
+    string PhongBan;
+    double HeSoLuong;
+    int SoNgayCong;
+    double LuongThucLinh;
+
+public:
+    // Constructor mac dinh
+    NhanVien()
+    {
+        MaNV = "";
+        HoTen = "";
+        PhongBan = "";
+        HeSoLuong = 0.0;
+        SoNgayCong = 0;
+        LuongThucLinh = 0.0;
+    }
+
+    // Constructor day du tham so
+    NhanVien(string ma, string ten, string phong,
+             double hsl, int ngay)
+    {
+        MaNV = ma;
+        HoTen = ten;
+        PhongBan = phong;
+        HeSoLuong = hsl;
+        SoNgayCong = ngay;
+        LuongThucLinh = 0.0;
+    }
+
+    // Getter
+    string getMaNV() const
+    {
+        return MaNV;
+    }
+
+    string getHoTen() const
+    {
+        return HoTen;
+    }
+
+    string getPhongBan() const
+    {
+        return PhongBan;
+    }
+
+    double getHeSoLuong() const
+    {
+        return HeSoLuong;
+    }
+
+    int getSoNgayCong() const
+    {
+        return SoNgayCong;
+    }
+
+    double getLuongThucLinh() const
+    {
+        return LuongThucLinh;
+    }
+
+    // Setter
+    void setMaNV(string ma)
+    {
+        MaNV = ma;
+    }
+
+    void setHoTen(string ten)
+    {
+        HoTen = ten;
+    }
+
+    void setPhongBan(string phong)
+    {
+        PhongBan = phong;
+    }
+
+    void setHeSoLuong(double hsl)
+    {
+        HeSoLuong = hsl;
+    }
+
+    void setSoNgayCong(int ngay)
+    {
+        SoNgayCong = ngay;
+    }
+
+    void setLuongThucLinh(double luong)
+    {
+        LuongThucLinh = luong;
+    }
