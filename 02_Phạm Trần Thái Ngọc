@@ -107,8 +107,6 @@ public:
     void nhap();
     void xuat() const;
 
-    // Tinh luong
-    void tinhLuong();
 };
 // Nhap nhan vien
 void NhanVien::nhap()
@@ -130,15 +128,6 @@ void NhanVien::nhap()
 
     cin.ignore();
 }
-
-
-// Tinh luong thuc linh
-void NhanVien::tinhLuong()
-{
-    LuongThucLinh =
-        HeSoLuong * 2340000 * SoNgayCong / 26;
-}
-
 
 // Xuat nhan vien
 void NhanVien::xuat() const
