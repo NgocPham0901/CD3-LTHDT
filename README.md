@@ -1,5 +1,5 @@
 # OOP-QuanLyNhanVien
-CDD3: Quản lý danh sách Nhân viên
+CD3: Quản lý danh sách Nhân viên
 Bảng phân công nhiệm vụ:
 | STT | Họ và tên | Tên nhánh | Nhiệm vụ phân công |
 | --- | --- | --- | --- |
