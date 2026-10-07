@@ -106,6 +106,7 @@ public:
 // Nhap, xuat
     void nhap();
     void xuat() const;
+    void tinhLuong();
 
 };
 // Nhap nhan vien
