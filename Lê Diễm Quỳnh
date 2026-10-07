@@ -1,0 +1,43 @@
+void QuanLyNhanVien::Them()
+{
+    if (SoLuong >= 200)
+    {
+        cout << "Danh sach da day, khong the them\n";
+        return;
+    }
+
+    int k;
+
+    do
+    {
+        cout << "Nhap vi tri can them "
+             << "(0 <= k <= " << SoLuong << "): ";
+        cin >> k;
+
+        if (k < 0 || k > SoLuong)
+        {
+            cout << "Vi tri khong hop le, "
+                 << "hay nhap lai\n";
+        }
+
+    } while (k < 0 || k > SoLuong);
+
+    cin.ignore();
+
+    NhanVien nv;
+
+    cout << "\nNhap nhan vien moi\n";
+    nv.nhap();
+
+    // Dich cac phan tu sang phai
+    for (int i = SoLuong; i > k; i--)
+    {
+        ds[i] = ds[i - 1];
+    }
+
+    ds[k] = nv;
+
+    SoLuong++;
+
+    cout << "Da them nhan vien vao danh sach\n";
+}
