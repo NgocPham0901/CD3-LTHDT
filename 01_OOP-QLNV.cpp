@@ -132,6 +132,7 @@ void NhanVien::nhap()
     cin >> SoNgayCong;
 
     cin.ignore();
+    tinhLuong();
 }
 
 
@@ -150,10 +151,9 @@ void NhanVien::xuat() const
          << setw(10) << MaNV
          << setw(25) << HoTen
          << setw(20) << PhongBan
-         << setw(15) << HeSoLuong
+         << setw(15) << fixed << setprecision(2) << HeSoLuong
          << setw(15) << SoNgayCong
-         << right << setw(18)
-         << fixed << setprecision(0)
+         << right << setw(18) << fixed << setprecision(0)
          << LuongThucLinh
          << endl;
 }
